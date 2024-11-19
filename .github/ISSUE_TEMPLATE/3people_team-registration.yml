@@ -2,6 +2,8 @@ name: "3인 팀 등록"
 description: "해커톤 팀 정보를 입력해 주세요."
 title: "[**팀 이름**] 팀 등록"
 labels: []
+assignees: 
+  - kdmin1325
 
 body:
   - type: markdown
