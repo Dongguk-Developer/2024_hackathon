@@ -1,0 +1,13 @@
+{
+  "name": "Python 3 Development Environment",
+  "image": "mcr.microsoft.com/vscode/devcontainers/python:latest",  // Python 버전 설정
+  "settings": {
+    "python.pythonPath": "/usr/local/bin/python3"
+  },
+  "extensions": [
+    "ms-python.python",        // Python 개발 확장
+    "ms-python.vscode-pylance" // Python IntelliSense 지원
+  ],
+  "postCreateCommand": "pip install -r requirements.txt",  // 필요한 패키지 설치
+  "forwardPorts": [8000]  // 포트 포워딩
+}
