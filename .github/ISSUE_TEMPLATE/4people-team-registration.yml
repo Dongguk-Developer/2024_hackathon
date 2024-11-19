@@ -11,7 +11,7 @@ body:
   - type: markdown
     attributes:
       value: "### 1. 팀 정보"
-      
+  
   - type: input
     id: team_name
     attributes:
@@ -30,14 +30,9 @@ body:
     validations:
       required: true
 
-  - type: input
-    id: team_leader_github
+  - type: markdown
     attributes:
-      label: "팀장 깃허브 닉네임"
-      description: "팀장 깃허브 닉네임을 입력해 주세요"
-      placeholder: "팀장 깃허브 닉네임 입력"
-    validations:
-      required: true
+      value: "---"
 
   - type: markdown
     attributes:
@@ -61,6 +56,10 @@ body:
     validations:
       required: true
 
+  - type: markdown
+    attributes:
+      value: "---"
+
   - type: input
     id: team_member_2_email
     attributes:
@@ -76,23 +75,5 @@ body:
       label: "팀원 2 깃허브 닉네임"
       description: "팀원 2의 깃허브 닉네임을 입력해 주세요"
       placeholder: "팀원 2 깃허브 닉네임 입력"
-    validations:
-      required: false
-
-  - type: input
-    id: team_member_3_email
-    attributes:
-      label: "팀원 3 이메일"
-      description: "팀원 3의 이메일을 입력해 주세요"
-      placeholder: "팀원 3 이메일 입력"
-    validations:
-      required: false
-
-  - type: input
-    id: team_member_3_github
-    attributes:
-      label: "팀원 3 깃허브 닉네임"
-      description: "팀원 3의 깃허브 닉네임을 입력해 주세요"
-      placeholder: "팀원 3 깃허브 닉네임 입력"
     validations:
       required: false
