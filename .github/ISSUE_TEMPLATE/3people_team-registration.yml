@@ -6,7 +6,7 @@ labels: []
 body:
   - type: markdown
     attributes:
-      value: "👋👋 상단의 제목에 팀 이름을 반드시 적어 주세요 👋👋"
+      value: "👋👋 상단의 제목에 팀 이름을 반드시 적어 주세요. 또한, 이메일은 지원서와 같은 메일이어야 합니다. 👋👋"
 
   - type: input
     id: team_name
