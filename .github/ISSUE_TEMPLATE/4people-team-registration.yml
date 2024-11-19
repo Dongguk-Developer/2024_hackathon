@@ -1,4 +1,4 @@
-name: "팀 등록"
+name: "4인 팀 등록"
 description: "해커톤 팀 정보를 입력해 주세요."
 title: "[**팀 이름**] 팀 등록"
 labels: []
@@ -29,7 +29,6 @@ body:
   - type: input
     id: team_leader_github
     attributes:
-      label: "팀장 깃허브 닉네임"
       description: "팀장 깃허브 닉네임을 입력해 주세요"
       placeholder: "팀장 깃허브 닉네임 입력"
     validations:
@@ -38,7 +37,7 @@ body:
   - type: input
     id: team_member_1_email
     attributes:
-      label: "팀원 1 이메일"
+      label: "팀원 1"
       description: "팀원 1의 이메일을 입력해 주세요"
       placeholder: "팀원 1 이메일 입력"
     validations:
@@ -47,7 +46,6 @@ body:
   - type: input
     id: team_member_1_github
     attributes:
-      label: "팀원 1 깃허브 닉네임"
       description: "팀원 1의 깃허브 닉네임을 입력해 주세요"
       placeholder: "팀원 1 깃허브 닉네임 입력"
     validations:
@@ -56,27 +54,25 @@ body:
   - type: input
     id: team_member_2_email
     attributes:
-      label: "팀원 2 이메일"
+      label: "팀원 2"
       description: "팀원 2의 이메일을 입력해 주세요"
       placeholder: "팀원 2 이메일 입력"
 
   - type: input
     id: team_member_2_github
     attributes:
-      label: "팀원 2 깃허브 닉네임"
       description: "팀원 2의 깃허브 닉네임을 입력해 주세요"
       placeholder: "팀원 2 깃허브 닉네임 입력"
 
   - type: input
     id: team_member_3_email
     attributes:
-      label: "팀원 3 이메일"
+      label: "팀원 3"
       description: "팀원 3의 이메일을 입력해 주세요"
       placeholder: "팀원 3 이메일 입력"
 
   - type: input
     id: team_member_3_github
     attributes:
-      label: "팀원 3 깃허브 닉네임"
       description: "팀원 3의 깃허브 닉네임을 입력해 주세요"
       placeholder: "팀원 3 깃허브 닉네임 입력"
