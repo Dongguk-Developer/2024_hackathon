@@ -1,40 +1,40 @@
-import smtplib
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
-import crawling
-
-def send_mail(youremail, yourpw, reemail):
-    # 메일 서버 설정
-    smtp_server = "smtp.naver.com"
-    smtp_port = 587
-
-    # 네이버 이메일 계정 정보
-    sender_email = youremail
-    sender_password = yourpw
-    receiver_email = reemail
-
-    # 이메일 메시지 작성
-    subject = "제목: 파이썬을 이용하여 보내는 메일입니다." #제목
-    body = "안녕하세요. 파이썬을 이용하여 보내는 테스트 메일 입니다" #내용
-
-    message = MIMEMultipart()
-    message["From"] = sender_email
-    message["To"] = receiver_email
-    message["Subject"] = subject
-    message.attach(MIMEText(body, "plain"))
-
-    # 이메일 전송 및 예외처리
-    try:
-        with smtplib.SMTP(smtp_server, smtp_port) as server:
-            server.starttls()
-            server.login(sender_email, sender_password)
-            server.sendmail(sender_email, receiver_email, message.as_string())
-        print("이메일이 성공적으로 전송되었습니다.")
-    except Exception as e:
-        print(f"이메일 전송 실패: {e}")
+import requests
+from bs4 import BeautifulSoup
+from datetime import datetime
 
 
-mail = input('네이버 이메일을 입력해주세요. \n')
-pw = input('비번을 입력해주세요. \n')
-receive = input('전송 받을 메일을 입력해주세요.\n')
-send_mail(mail, pw, receive)
+def noti_page_parser(noti_link):
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
+    data = requests.get(noti_link + 'list#none', headers=headers)
+    soup = BeautifulSoup(data.text, 'html.parser')
+
+    # 현재 날짜와 시간 가져오기
+    current_time = datetime.now().strftime("%Y-%m-%d %H시")
+    Noti_num_list = list()
+    Noti_num_list.append(f"{current_time} 공지 내역입니다. \n\n")
+
+    # 한 페이지 전체를 크롤링 하도록 16으로 설정
+    for i in range(1, 16):
+        # 공지인 경우 크롤링을 진행하지 않음
+        title = soup.select_one(
+            '#wrap > div.ly-right > div.contents > div > div.board > div.board_list > ul > li:nth-child(%d) > a > div.top > p > span' % i)
+        if title is not None:
+            continue
+
+        # 공지 제목 추출
+        title = soup.select_one(
+            '#wrap > div.ly-right > div.contents > div > div.board > div.board_list > ul > li:nth-child(%d) > a > div.top > p' % i)
+
+        if title is None:  # 만약 제목이 없다면 continue
+            continue
+
+        Notice_Title = title.get_text(strip=True)
+
+        # 리스트 저장 부분
+        Noti_num_list.append(f"- {Notice_Title}\n")
+
+    # 리스트를 하나의 문자열로 결합하여 반환
+    return ''.join(Noti_num_list)
+
+print(noti_page_parser('https://wise.dongguk.ac.kr/article/generalnotice/'))
