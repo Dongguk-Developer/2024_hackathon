@@ -8,18 +8,18 @@ body:
     attributes:
       value: "👋👋 상단의 제목에 팀 이름을 반드시 적어 주세요 👋👋"
 
-  - type: markdown
-    attributes:
-      value: "### 1. 팀 정보"
-  
   - type: input
     id: team_name
     attributes:
-      label: "팀 이름"
+      label: "팀명"
       description: "팀 이름을 입력해 주세요"
       placeholder: "팀 이름을 입력해 주세요"
     validations:
       required: true
+
+  - type: markdown
+    attributes:
+      value: "---"
 
   - type: input
     id: team_leader_email
@@ -30,14 +30,19 @@ body:
     validations:
       required: true
 
+  - type: input
+    id: team_leader_github
+    attributes:
+      label: "팀장 깃허브 주소"
+      description: "팀장 깃허브 주소를 입력해 주세요"
+      placeholder: "팀장 깃허브 주소 입력"
+    validations:
+      required: true
+
   - type: markdown
     attributes:
       value: "---"
 
-  - type: markdown
-    attributes:
-      value: "### 2. 팀원 정보"
-  
   - type: input
     id: team_member_1_email
     attributes:
@@ -50,9 +55,9 @@ body:
   - type: input
     id: team_member_1_github
     attributes:
-      label: "팀원 1 깃허브 닉네임"
-      description: "팀원 1의 깃허브 닉네임을 입력해 주세요"
-      placeholder: "팀원 1 깃허브 닉네임 입력"
+      label: "팀원 1 깃허브 주소"
+      description: "팀원 1의 깃허브 주소를 입력해 주세요"
+      placeholder: "팀원 1 깃허브 주소 입력"
     validations:
       required: true
 
@@ -67,13 +72,35 @@ body:
       description: "팀원 2의 이메일을 입력해 주세요"
       placeholder: "팀원 2 이메일 입력"
     validations:
-      required: false
+      required: true
 
   - type: input
     id: team_member_2_github
     attributes:
-      label: "팀원 2 깃허브 닉네임"
-      description: "팀원 2의 깃허브 닉네임을 입력해 주세요"
-      placeholder: "팀원 2 깃허브 닉네임 입력"
+      label: "팀원 2 깃허브 주소"
+      description: "팀원 2의 깃허브 주소를 입력해 주세요"
+      placeholder: "팀원 2 깃허브 주소 입력"
     validations:
-      required: false
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "---"
+
+  - type: input
+    id: team_member_3_email
+    attributes:
+      label: "팀원 3 이메일"
+      description: "팀원 3의 이메일을 입력해 주세요"
+      placeholder: "팀원 3 이메일 입력"
+    validations:
+      required: true
+
+  - type: input
+    id: team_member_3_github
+    attributes:
+      label: "팀원 3 깃허브 주소"
+      description: "팀원 3의 깃허브 주소를 입력해 주세요"
+      placeholder: "팀원 3 깃허브 주소 입력"
+    validations:
+      required: true
