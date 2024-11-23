@@ -36,8 +36,8 @@ body:
     id: team_leader_github
     attributes:
       label: "팀장 깃허브 주소"
-      description: "팀장 깃허브 주소를 입력해 주세요"
-      placeholder: "팀장 깃허브 주소 입력"
+      description: "팀장 깃허브 아이디를 입력해 주세요"
+      placeholder: "팀장 깃허브 아이디 입력"
     validations:
       required: true
 
@@ -58,8 +58,8 @@ body:
     id: team_member_1_github
     attributes:
       label: "팀원 1 깃허브 주소"
-      description: "팀원 1의 깃허브 주소를 입력해 주세요"
-      placeholder: "팀원 1 깃허브 주소 입력"
+      description: "팀원 1의 깃허브 아이디를 입력해 주세요"
+      placeholder: "팀원 1 깃허브 아이디 입력"
     validations:
       required: true
 
@@ -80,8 +80,8 @@ body:
     id: team_member_2_github
     attributes:
       label: "팀원 2 깃허브 주소"
-      description: "팀원 2의 깃허브 주소를 입력해 주세요"
-      placeholder: "팀원 2 깃허브 주소 입력"
+      description: "팀원 2의 깃허브 아이디를 입력해 주세요"
+      placeholder: "팀원 2 깃허브 아이디 입력"
     validations:
       required: true
 
@@ -102,7 +102,7 @@ body:
     id: team_member_3_github
     attributes:
       label: "팀원 3 깃허브 주소"
-      description: "팀원 3의 깃허브 주소를 입력해 주세요"
-      placeholder: "팀원 3 깃허브 주소 입력"
+      description: "팀원 3의 깃허브 아이디를 입력해 주세요"
+      placeholder: "팀원 3 깃허브 아이디 입력"
     validations:
       required: true
