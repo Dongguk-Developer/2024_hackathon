@@ -1,0 +1,37 @@
+name: "운영진 검증 등록"
+description: "운영진 검증 등록 템플릿"
+title: "[**팀 이름**] 운영진 검증 등록"
+labels: []
+assignees:
+  - kdmin1325
+
+body:
+  - type: markdown
+    attributes:
+      value: "👋👋 상단의 제목에 팀 이름을 반드시 적어 주세요."
+
+  - type: input
+    id: team_name
+    attributes:
+      label: "팀명"
+      description: "팀 이름을 입력해 주세요"
+      placeholder: "팀 이름을 입력해 주세요"
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "---"
+
+  - type: input
+    id: team_github
+    attributes:
+      label: "팀 깃허브 주소"
+      description: "팀 깃허브 주소를 입력해주세요"
+      placeholder: "팀 깃허브 주소 입력"
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "---"
